@@ -1,5 +1,8 @@
 # Kelola Pengguna (cms-user-management) — v1
 
+> Initiative context — problem, glossary, business rules, decision log — lives
+> in [../CONTEXT.md](../CONTEXT.md). This file covers v1 only.
+
 **Question this prototype answers:** can an admin add or update a user from one
 email-first page without creating duplicates, and do they understand — without
 explanation — that saved organizations cannot be removed?

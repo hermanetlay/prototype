@@ -6,7 +6,7 @@ one URL prefix; one iteration = one version segment under it.
 ```
 /                                  catalogue of every prototype
 /p/<initiative>/<version>/...      one prototype
-/p/persetujuan-materi/v1           the worked example
+/p/cms-user-management/v1          the worked example
 ```
 
 ## Stack
@@ -35,10 +35,10 @@ pnpm build
 ## Adding a prototype
 
 ```bash
-pnpm new persetujuan-materi v2
+pnpm new cms-user-management v2
 ```
 
-That writes `src/routes/p/persetujuan-materi/v2/` and you are done — the
+That writes `src/routes/p/cms-user-management/v2/` and you are done — the
 catalogue on `/` and the MSW worker both discover new folders by glob, so
 there is no central list to edit.
 

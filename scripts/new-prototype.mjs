@@ -2,10 +2,10 @@
 /**
  * Scaffold a new initiative, or a new version of an existing one.
  *
- *   pnpm new persetujuan-materi v2
+ *   pnpm new cms-user-management v2
  *
  * Creates src/routes/p/<initiative>/<version>/ with meta, CONTEXT, a mock API
- * and an index page. Nothing else needs registering — the catalogue at `/` and
+ * and an index page, plus the initiative-level CONTEXT.md if it is missing. Nothing else needs registering — the catalogue at `/` and
  * the MSW worker both discover the folder by glob.
  */
 import { mkdir, writeFile, access } from 'node:fs/promises'
@@ -112,6 +112,46 @@ function Page() {
   )
 }
 `,
+}
+
+// Initiative-level context, written once — the first version creates it.
+const initiativeContext = join('src/routes/p', initiative, 'CONTEXT.md')
+try {
+  await access(initiativeContext)
+} catch {
+  await mkdir(join('src/routes/p', initiative), { recursive: true })
+  await writeFile(
+    initiativeContext,
+    `# ${title}
+
+Initiative-level context. Applies to every version; each version's own
+\`CONTEXT.md\` records what that iteration tried and decided.
+
+## Problem
+TODO
+
+## Glossary
+| Term (UI) | Meaning |
+|---|---|
+| TODO | TODO |
+
+## Business rules
+1. TODO
+
+## Versions
+| Version | Status | Date | What it explores |
+|---|---|---|---|
+| [${version}](${version}/CONTEXT.md) | draft | ${today} | TODO |
+
+## Decision log
+| Date | Decision | Why |
+|---|---|---|
+
+## Open questions
+- TODO
+`,
+  )
+  console.log('created', initiativeContext)
 }
 
 for (const [name, content] of Object.entries(files)) {

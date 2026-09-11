@@ -25,7 +25,8 @@
         ├── __root.tsx            devtools + outlet
         ├── index.tsx             the catalogue
         └── p/
-            └── <initiative>/     e.g. persetujuan-materi
+            └── <initiative>/     e.g. cms-user-management
+                ├── CONTEXT.md    initiative context (see below)
                 └── <version>/    e.g. v1
                     ├── -meta.ts        catalogue entry (required)
                     ├── CONTEXT.md      why this exists, decisions, open questions
@@ -53,10 +54,13 @@ initiative keep its data, mocks, and components next to its screens.
    it moves to `src/shared/`. Cross-imports make v1 break when v2 changes.
 4. **Anything shared is generic.** `src/shared/` holds no initiative-specific
    copy, fixture, or business rule.
-5. **Every version has a `-meta.ts` and a `CONTEXT.md`.** `-meta.ts` is what the
-   catalogue shows; `CONTEXT.md` is why the prototype exists, what was decided,
-   and what is still open. Both are the point of the repo — the code is
-   disposable, the context is not.
+5. **Context lives at two levels.** Each initiative has a `CONTEXT.md` for what
+   holds across versions: the problem, the domain glossary, business rules, a
+   version table and a decision log. Each version has a `-meta.ts` (what the
+   catalogue shows) and its own `CONTEXT.md` (what that iteration tried,
+   decided, and left open), linking up to the initiative doc. `pnpm new` creates
+   the initiative doc the first time. These files are the point of the repo —
+   the code is disposable, the context is not.
 6. **All data comes from MSW.** No hardcoded arrays rendered directly in a
    component: put fixtures in `-data/`, serve them from `-api/handlers.ts`, read
    them with TanStack Query. That way the prototype exercises loading, empty,

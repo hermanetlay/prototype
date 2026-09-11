@@ -9,11 +9,12 @@ it. There is no backend anywhere — MSW fakes every request in the browser.
 ```
 /                                catalogue of every prototype
 /p/<initiative>/<version>/...    one prototype
-/p/persetujuan-materi/v1         the worked example to copy from
+/p/cms-user-management/v1        the worked example to copy from
 ```
 
-The code here is deliberately disposable. The **context is not**: `-meta.ts`
-and `CONTEXT.md` in each version folder are the durable output of this repo.
+The code here is deliberately disposable. The **context is not**: the
+initiative-level `CONTEXT.md`, plus `-meta.ts` and `CONTEXT.md` in each version
+folder, are the durable output of this repo.
 
 ## Stack
 
@@ -51,9 +52,11 @@ src/
     lib/                       registry (catalogue glob), query client, cn
   routes/
     __root.tsx  index.tsx      devtools shell; the catalogue page
+    p/<initiative>/
+      CONTEXT.md               problem, glossary, business rules, versions, decision log — REQUIRED
     p/<initiative>/<version>/
       -meta.ts                 catalogue entry — REQUIRED
-      CONTEXT.md               why it exists, decisions, open questions — REQUIRED
+      CONTEXT.md               what this version tries, decides, leaves open — REQUIRED
       -api/handlers.ts         MSW handlers, auto-collected
       -data/                   seed fixtures
       -components/             screens/widgets local to this version
