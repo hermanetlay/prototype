@@ -1,0 +1,105 @@
+/* Generated from DESIGN.md — the single source of truth for visual tokens.
+   Edit DESIGN.md first, then mirror the change here. */
+@theme {
+  /* --- Brand / interactive --- */
+  --color-brand: #0b5ae2;
+  --color-interactive: #0b5fef;
+  --color-interactive-hovered: #054bcc;
+  --color-interactive-pressed: #2c7fff;
+  --color-interactive-focused: #4c8df6;
+  --color-interactive-disabled: #c9cbcf;
+  --color-sidebar: #103178;
+
+  /* --- Surfaces --- */
+  --color-background: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-surface-subdued: #f5f5f5;
+  --color-surface-hovered: #efefef;
+  --color-surface-pressed: #d9dbdd;
+  --color-surface-selected: #ecf5fe;
+
+  /* --- Text --- */
+  --color-text: #2f3031;
+  --color-text-subdued: #65696c;
+  --color-text-disabled: #808489;
+  --color-text-inverse: #ffffff;
+  --color-text-critical: #e02d38;
+  --color-text-success: #2e8a5c;
+  --color-text-warning: #a5a003;
+  --color-text-informational: #4c8df6;
+
+  /* --- Borders --- */
+  --color-border: #d9dbdd;
+  --color-border-subdued: #c9cbcf;
+  --color-border-strong: #808489;
+  --color-border-critical: #e02d38;
+
+  /* --- Status --- */
+  --color-critical: #c82236;
+  --color-critical-subdued: #fef4f4;
+  --color-success: #35825a;
+  --color-success-subdued: #e3fdeb;
+  --color-warning: #ffc453;
+  --color-warning-subdued: #ffeece;
+  --color-informational: #4c8df6;
+  --color-informational-subdued: #ecf5fe;
+
+  /* --- Neutral ramp --- */
+  --color-gray-0: #fafafa;
+  --color-gray-5: #f5f5f5;
+  --color-gray-10: #efefef;
+  --color-gray-20: #d9dbdd;
+  --color-gray-30: #c9cbcf;
+  --color-gray-40: #b3b5b7;
+  --color-gray-50: #808489;
+  --color-gray-60: #65696c;
+  --color-gray-70: #53575a;
+  --color-gray-80: #45474a;
+  --color-gray-90: #2f3031;
+  --color-gray-100: #1e1f1f;
+
+  /* --- Accent ramp --- */
+  --color-blue-5: #ecf5fe;
+  --color-blue-10: #e1effe;
+  --color-blue-50: #4c8df6;
+  --color-blue-70: #0b5fef;
+  --color-blue-80: #054bcc;
+  --color-blue-90: #103178;
+
+  /* --- Radii --- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  /* --- Type ramp (size / line-height pairs) --- */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --text-display-lg: 32px;
+  --text-display-lg--line-height: 36px;
+  --text-display-md: 28px;
+  --text-display-md--line-height: 36px;
+  --text-display-sm: 24px;
+  --text-display-sm--line-height: 28px;
+  --text-heading-lg: 22px;
+  --text-heading-lg--line-height: 28px;
+  --text-heading-md: 19px;
+  --text-heading-md--line-height: 24px;
+  --text-heading-sm: 17px;
+  --text-heading-sm--line-height: 22px;
+  --text-subheading: 14px;
+  --text-subheading--line-height: 16px;
+  --text-body-lg: 20px;
+  --text-body-lg--line-height: 28px;
+  --text-body: 16px;
+  --text-body--line-height: 24px;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 20px;
+  --text-action: 16px;
+  --text-action--line-height: 24px;
+  --text-helper: 12px;
+  --text-helper--line-height: 16px;
+
+  /* --- Shell metrics --- */
+  --spacing-header: 56px;
+  --spacing-sidebar: 256px;
+}
