@@ -19,7 +19,8 @@ folder, are the durable output of this repo.
 ## Stack
 
 Vite + React 19 · TanStack Router (file-based, auto code-split) · TanStack Query
-· MSW (browser worker) · Tailwind v4 · TypeScript strict. Client-only: `pnpm
+· MSW (browser worker) · Tailwind v4 · TypeScript strict · UI SDK
+(`@ui-sdk/react` + `@ui-sdk/core`, headless behaviour components, see below). Client-only: `pnpm
 build` emits static files. Do not add SSR, a server, or a database.
 
 `DESIGN.md` is the visual system (Ruang Murid CMS). It is framework-agnostic —
@@ -100,6 +101,44 @@ a leading `-`, and never put non-route code in a file without one.
 10. **Light mode only.** `DESIGN.md` defines dark tokens but no screen is
     authored against them; don't invent a dark theme by inverting.
 
+## Interactive components: UI SDK
+
+[UI SDK](https://github.com/vercel-labs/ui) (`@ui-sdk/react`, Apache-2.0) gives
+**unstyled** components with the behaviour done for you: keyboard, focus,
+dismissal, popups, ARIA. Use it in **new versions** for anything with
+behaviour: Select, Combobox, Autocomplete, Dialog, Alert Dialog, Drawer,
+Popover, Menu, Tabs, Tooltip, Toast, Date Picker, Checkbox, Switch, Radio.
+Don't hand-roll these, and don't add another component library.
+
+- **Docs ship in the package.** Read
+  `node_modules/@ui-sdk/react/docs/llms.txt` first, then
+  `node_modules/@ui-sdk/react/docs/components/<name>.md` for the component you
+  use. They match the installed version; the website may be ahead of it.
+- **One entry per component**, no root import:
+  `import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@ui-sdk/react/select'`.
+- **Style with `DESIGN.md` tokens only.** Every part has a `data-slot`, and
+  state shows as attributes, so use Tailwind attribute variants:
+  `data-open:bg-surface-hovered`, `data-disabled:opacity-50`,
+  `data-highlighted:bg-surface-hovered`, `data-selected:font-semibold`. Popups get `data-starting-style` /
+  `data-ending-style` for enter and exit transitions.
+- **Do not import `@ui-sdk/core/web.css`.** Its default look competes with
+  `DESIGN.md`. Menu, Select, Combobox and Date Picker content keep the
+  browser's popover border, padding and background, so give those parts
+  `border`, padding and `bg-surface` yourself.
+- **Keep `@layer ui-sdk;` as the first rule of `src/styles/app.css`**, above
+  `@import 'tailwindcss'`. UI SDK injects its few behaviour styles into that
+  layer; declaring it first keeps Tailwind and our styles above it.
+- **Where it lives:** use it directly inside a version's `-components/`. A
+  generic wrapper (for example a token-styled `Select`) may go in
+  `src/shared/ui/` under rule 4; no initiative copy goes there.
+- **Pinned beta.** Both packages are pinned to `0.1.0-beta.17`; the API may
+  change before 1.0. Upgrade both together, on purpose, and re-run
+  `pnpm typecheck` and `pnpm build`.
+- **Frozen versions are not migrated.** Versions built before UI SDK (for
+  example with `react-select`) stay as they are; don't retrofit them.
+  `react-select` stays installed for them, but new versions use UI SDK's
+  Select, Combobox or Autocomplete instead.
+
 ## Gotchas
 
 - Dynamic `to={...}` on a `<Link>` can't be statically verified by the router's
@@ -111,7 +150,7 @@ a leading `-`, and never put non-route code in a file without one.
   Re-run it after an MSW major upgrade.
 - Nothing renders until the MSW worker is listening (see `main.tsx`); a blank
   page usually means the worker failed to register.
-- **react-select** (used for multi-selects) styles with emotion, whose CSS is
+- **react-select** (used for multi-selects in versions built before UI SDK) styles with emotion, whose CSS is
   unlayered and beats Tailwind v4's `@layer utilities`. Theme it with
   `unstyled` + `classNames`, but anything that must *override* a base style
   (e.g. `display: none` on a fixed chip's remove button) goes in `styles`.
