@@ -45,6 +45,7 @@ order and the "tanggal selesai >= hari ini" rule are understandable.
 | Version | Status | Date | What it explores |
 |---|---|---|---|
 | [v1](v1/CONTEXT.md) | review | 2026-11-17 | Three structures for the same flows: table + form page, table + side drawer with live preview, board per status tayang. **Variant A chosen.** |
+| [v2](v2/CONTEXT.md) | draft | 2026-11-25 | Variant A only; Jenjang in the form becomes a multi-select dropdown instead of checkboxes. |
 
 ## Decision log
 | Date | Decision | Why |
@@ -56,6 +57,7 @@ order and the "tanggal selesai >= hari ini" rule are understandable.
 | 2026-11-17 | Prototype v1 built with 3 variants | Compare how well each makes status tayang, homepage order and the expired-date block understandable |
 | 2026-11-17 | Add layanan `Kelas Belajar` in the prototype | Requested change; deviates from RFC 6.1 (`informasi_layanan`), so the RFC and OpenAPI enum need updating |
 | 2026-11-17 | Variant A (table + full-page form) chosen; v1 frozen | A has the correct heading on top of the filter (heading → filter → table), matching the current CMS pattern. Next iteration (v2) starts from A only |
+| 2026-11-25 | Prototype v2: Jenjang in the form is a multi-select dropdown | Requested change; tests whether it beats checkboxes when there are more jenjang. Layanan stays checkboxes |
 
 ## Open questions
 - Does the expired-date block need relaxing (for example allow setting Inaktif)? The RFC says no; v1 only makes the reason visible.
