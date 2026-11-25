@@ -17,7 +17,7 @@ TODO
 ## Versions
 | Version | Status | Date | What it explores |
 |---|---|---|---|
-| [v1](v1/CONTEXT.md) | draft | 2026-11-25 | Kelompok instrumen with kategori and indikator, guard rules, three detail layouts (halaman, panel, tabel) |
+| [v1](v1/CONTEXT.md) | review | 2026-11-25 | Kelompok instrumen with kategori and indikator, guard rules, three detail layouts (halaman, panel, tabel) |
 
 ## Decision log
 | Date | Decision | Why |

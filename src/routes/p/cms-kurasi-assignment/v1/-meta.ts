@@ -4,7 +4,7 @@ export const meta: PrototypeMeta = {
   title: 'Penugasan Kurasi Massal',
   summary:
     'Admin Super menugaskan kurasi ke banyak materi sekaligus lewat dialog, dengan prefill program, ringkasan dampak, dan hasil per materi.',
-  status: 'draft',
+  status: 'review',
   updated: '2026-11-24',
   owners: [],
   changes:
