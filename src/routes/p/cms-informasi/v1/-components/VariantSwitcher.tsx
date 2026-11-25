@@ -9,6 +9,9 @@ const LABEL: Record<Variant, string> = {
   C: 'Papan per status tayang',
 }
 
+/** The variant chosen for the product (see CONTEXT.md, Outcome). */
+const CHOSEN: Variant = 'A'
+
 /** Floating bar: ← → keys (not while typing) and a toggle for the 500 state. */
 export function VariantSwitcher({
   variant,
@@ -43,6 +46,9 @@ export function VariantSwitcher({
       </button>
       <span className="min-w-56 text-center font-semibold">
         {variant} ({LABEL[variant]})
+        {variant === CHOSEN ? (
+          <span className="ml-2 rounded-full bg-success-subdued px-2 py-0.5 text-helper text-text-success">✓ Dipilih</span>
+        ) : null}
       </span>
       <button aria-label="Varian berikutnya" className={btn} onClick={() => step(1)}>
         →

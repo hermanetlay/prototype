@@ -8,5 +8,5 @@ export const meta: PrototypeMeta = {
   updated: '2026-11-24',
   owners: [],
   changes:
-    'Versi awal: tiga varian dialog (wizard, panel, review) di atas daftar Kelola Materi tiruan. Pilihan program diganti combobox yang bisa dicari (pencarian, debounce, maks 20 hasil) dan seed diperbanyak menjadi 12 program SD Modul Ajar.',
+    'Varian review dipilih (default). Versi awal: tiga varian dialog (wizard, panel, review) di atas daftar Kelola Materi tiruan. Pilihan program diganti combobox yang bisa dicari (pencarian, debounce, maks 20 hasil) dan seed diperbanyak menjadi 12 program SD Modul Ajar.',
 }

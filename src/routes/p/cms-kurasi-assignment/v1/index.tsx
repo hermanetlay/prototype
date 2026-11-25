@@ -18,7 +18,7 @@ type Search = { variant: Variant; tab: 'semua' | 'perlu' }
 
 export const Route = createFileRoute('/p/cms-kurasi-assignment/v1/')({
   validateSearch: (s: Record<string, unknown>): Search => ({
-    variant: s.variant === 'panel' || s.variant === 'review' ? s.variant : 'wizard',
+    variant: s.variant === 'wizard' || s.variant === 'panel' ? s.variant : 'review',
     tab: s.tab === 'perlu' ? 'perlu' : 'semua',
   }),
   component: Page,

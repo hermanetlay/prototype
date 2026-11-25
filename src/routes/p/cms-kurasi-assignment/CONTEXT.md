@@ -17,11 +17,12 @@ TODO
 ## Versions
 | Version | Status | Date | What it explores |
 |---|---|---|---|
-| [v1](v1/CONTEXT.md) | review | 2026-11-24 | Bulk assign dialog in three variants (wizard, panel, review): program prefill, impact summary, type-to-confirm, partial-failure results |
+| [v1](v1/CONTEXT.md) | review | 2026-11-24 | Bulk assign dialog in three variants (wizard, panel, review): program prefill, impact summary, type-to-confirm, partial-failure results. **`review` chosen.** |
 
 ## Decision log
 | Date | Decision | Why |
 |---|---|---|
+| 2026-11-25 | Variant `review` chosen; v1 frozen | Eligibility table plus per-materi before/after confirm shows what is locked and what is discarded before the admin confirms. Next iteration (v2) starts from `review` only |
 
 ## Open questions
 - TODO

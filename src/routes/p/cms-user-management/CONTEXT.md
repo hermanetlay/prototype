@@ -49,7 +49,7 @@ its own `CONTEXT.md`.
 
 | Version | Status | Date | What it explores |
 |---|---|---|---|
-| [v1](v1/CONTEXT.md) | review | 2026-09-11 | Single page: email lookup → insert or update mode; append-only org multi-select; flips to update mode after save. |
+| [v1](v1/CONTEXT.md) | shipped | 2026-09-11 | Single page: email lookup → insert or update mode; append-only org multi-select; flips to update mode after save. |
 
 ## Decision log
 
@@ -61,6 +61,7 @@ its own `CONTEXT.md`.
 | 2026-09-11 | Organizations loaded once, filtered client-side | List is small (10–50) and won't grow much. |
 | 2026-09-11 | Role belongs to the user and is immutable after creation | Role is an identity attribute, not a membership attribute. |
 | 2026-09-11 | Page state in the URL as `?email=` | Every state shareable in review. Accepted privacy trade-off for the prototype only. |
+| 2026-11-25 | v1 marked `shipped` | The flow is final and already implemented in the CMS. |
 
 ## Open questions
 

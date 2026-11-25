@@ -8,5 +8,5 @@ export const meta: PrototypeMeta = {
   updated: '2026-11-25',
   owners: [],
   changes:
-    'Versi awal: 3 varian detail (halaman + akordeon, panel terpisah, tabel datar) dengan daftar, data, endpoint MSW dan aturan penjaga yang sama.',
+    'Varian halaman dipilih. Versi awal: 3 varian detail (halaman + akordeon, panel terpisah, tabel datar) dengan daftar, data, endpoint MSW dan aturan penjaga yang sama.',
 }

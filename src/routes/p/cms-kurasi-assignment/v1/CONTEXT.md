@@ -1,5 +1,14 @@
 # Penugasan Kurasi Massal — v1
 
+## Outcome (2026-11-25)
+
+**Variant `review` is chosen.** It is the direction for the bulk assign dialog: eligibility table from E2, values,
+per-materi before/after confirm, then Hasil. `review` is now the default (`?variant=wizard|panel` still opens the
+others). `wizard` and `panel` stay in this version as the record of what was compared.
+
+The version is frozen (`status: 'review'`). Further changes go into `v2`, which starts from `review` only.
+The open questions below are still open and go to the BE and the RFC owner.
+
 **Question this prototype answers:** Does the `AssignKurasiDialog` flow work for Admin Super doing a bulk
 assignment? Can the admin tell what will be locked and what will be discarded before confirming?
 
@@ -7,7 +16,7 @@ RFC: `murid-command-center/docs/rfc/admin-super-kurasi-assignment-and-program.md
 Initiative context: [../CONTEXT.md](../CONTEXT.md).
 
 ## URL
-`/p/cms-kurasi-assignment/v1?variant=wizard|panel|review&tab=semua|perlu`
+`/p/cms-kurasi-assignment/v1?variant=review|wizard|panel&tab=semua|perlu` (default `review`)
 
 ## Scope
 - Host page: mock "Kelola Materi" list in AppShell, tabs, search, checkboxes, **Tugaskan Kurasi**. Rows beyond

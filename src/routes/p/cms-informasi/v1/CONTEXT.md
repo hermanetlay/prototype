@@ -17,7 +17,7 @@ Informasi pages, and it matches the existing CMS pattern (Sumber Belajar).
 ("Daftar Informasi" with its subtitle and the "Tambah Informasi" action) sits
 above the filters, so the page reads heading → filter → table.
 
-B and C stay in this version as the record of what was compared.
+B and C stay in this version as the record of what was compared. Confirmed final on 2026-11-25.
 
 The version is frozen (`status: 'review'`). Further changes go into `v2`, which
 starts from variant A only.

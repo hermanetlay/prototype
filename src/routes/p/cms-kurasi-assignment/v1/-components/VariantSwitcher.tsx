@@ -9,6 +9,9 @@ const variants: { key: Variant; label: string }[] = [
   { key: 'review', label: 'Review' },
 ]
 
+/** The variant chosen for the product (see CONTEXT.md, Outcome). */
+const CHOSEN: Variant = 'review'
+
 /** Floating bar: pick a dialog variant and toggle simulated failures. */
 export function VariantSwitcher({
   value,
@@ -38,6 +41,16 @@ export function VariantSwitcher({
             )}
           >
             {v.label}
+            {v.key === CHOSEN ? (
+              <span
+                className={cn(
+                  'ml-1.5 rounded-full px-1.5 text-helper',
+                  value === v.key ? 'bg-white/25' : 'bg-success-subdued text-text-success',
+                )}
+              >
+                ✓ Dipilih
+              </span>
+            ) : null}
           </button>
         ))}
       </div>

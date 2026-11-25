@@ -3,6 +3,14 @@
 Initiative context: [../CONTEXT.md](../CONTEXT.md). RFC:
 `murid-command-center/docs/rfc/cms-instrumen-kurasi-crud.md`.
 
+## Outcome (2026-11-25)
+
+**Variant `halaman` is chosen.** It is the layout the RFC describes: a header with Aktifkan / Nonaktifkan, then an
+accordion of kategori that lazy-loads its indikator, with dialogs for add, edit and delete. It is already the default.
+`panel` and `tabel` stay in this version as the record of what was compared and will not be built.
+
+The version is frozen (`status: 'review'`). Further changes go into `v2`, which starts from `halaman` only.
+
 **Question this prototype answers:** Can Admin Super manage a kelompok instrumen
 with its kategori and indikator, and do the guard rules make sense (the 409
 refusals and the blocked or disabled actions)? Which of three structurally
